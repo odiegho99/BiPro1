@@ -1,0 +1,273 @@
+html, body, #container, .ember-application {
+  height:      100%;
+  width:       100%;
+  margin:      0px;
+  padding:     0px;
+}
+li { list-style-type: none; }
+ul {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:   18px;
+  margin-left: -20px; 
+}
+
+#search {
+  min-height:         28px;
+  width:              90%;
+}
+#search input[type='button'] {
+  height:      36px;
+  width:       90%;
+  border-color: #555;
+  cursor: pointer;
+  background-color: green;
+  color: #ffffff;
+  -webkit-border-radius: 5px;
+  border: 1px solid #000;
+  font-family: Cambria;
+  font-size: 18px;
+}
+@media (min-width: 481px) { 
+  .search__button { width: 195px; }
+}
+@media (max-width: 480px) { 
+  .search__button { width: 99px; }
+}  
+
+#search input[type='text'] {
+  width: 100%;
+  line-height: 1.7em;
+  border: 1px solid #000080;
+  border-radius: 5px;
+  margin: 1px;
+  padding-left: 4px;
+  font-family: Cambria;
+  font-size: 18px;
+}
+#search span {
+  display:          block;
+  overflow:         hidden;
+} 
+
+.box4 {
+  width: 30px;
+  height: 30px;
+  background-color: #000080;
+  border: 2px solid #000080;
+  border-radius: 50px;
+  position: relative;
+  animation-name: box4;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-delay: 20s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes box4 {
+  0%   {background-color:#000080; left:0px; top:0px;}
+  25%  {background-color:#0000ff; left:0px; top:0px;}
+  50%  {background-color:#000080; left:0px; top:0px;}
+  75%  {background-color:#000080; left:0px; top:0px;}
+  100% {background-color:#000080; left:0px; top:0px;} 
+}
+
+#books { 
+ background-color: white;
+}  
+
+@media (min-width: 481px) {
+  #books { width: 145px; }
+  li:after { content: attr(data-book); }
+}
+
+@media (max-width: 480px) { 
+  #books { width: 59px; }
+}
+
+
+#chapters {
+  width: 54px;
+ background-color: #d3d3d3;
+}
+
+
+#verses {
+ background-color: #f1f1f1; 
+}
+
+#books, #verses, #chapters {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  height: 95%;
+}
+
+.fl { float: left; }
+.ovf { overflow-y: scroll; overflow-x: hidden; }
+
+
+@media (min-width: 481px) { 
+  li[data-book='lemon']:before { 
+  content: 'Philemon' !important;
+  color: black !important; 
+  }
+}
+@media (max-width: 480px) { 
+  li[data-book='lemon']:before { 
+  content: 'Phm'      !important; 
+  color: black !important;
+  }
+}
+li[data-book='lemon'] { color: white; }
+
+
+@media (min-width: 481px) { 
+  li[data-book='ges']:before { 
+  content: 'Judges' !important; 
+  color: black !important;
+  }
+}
+@media (max-width: 480px) { 
+  li[data-book='ges']:before { 
+  content: 'Jdg'      !important; 
+  color:   black      !important; 
+  }
+}
+li[data-book='ges'] { color: white; }
+
+.search__result {
+  background-color: yellow;
+}
+
+
+.highlight-book:not([data-book='lemon']):not([data-book='ges']) {
+    background-color: #0099FF;
+    color: white;
+}
+
+
+li[data-book='lemon'].highlight-book:before,
+li[data-book='ges'].highlight-book:before {
+    background-color: #0099FF !important; 
+    color: white !important;
+}
+
+
+.highlight-chapter {
+    background-color: #0099FF;
+    color: white;
+}
+
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+
+#search__actual {position: absolute;}
+#search__actual .tt-menu {
+    top: 0% !important;
+}
+#search__actual .typeahead {
+    top: -40px !important;
+    z-index: -20;
+}
+
+.twitter-typeahead {
+    position: static !important;
+    height: 1px !important;
+}
+
+.tt-menu.tt-open {
+    background-color: white;
+    width: 100%;
+    left: 7px !important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+.tt-dropdown-menu {
+  height: 124px;
+  overflow-y: auto;
+}
+
+.bbox {
+height: 500px;
+overflow: auto;
+} 
+
+body {
+  color: #000000;
+  text-align: justify;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0.5));
+  border-radius: 0px;
+} 
+
+@media (min-width: 481px) { 
+  li[data-book='lemon']:before { 
+  content: 'Philemon' !important;
+  color: black !important; 
+  }
+}
+
+@media (max-width: 480px) { 
+  li[data-book='lemon']:before { 
+  content: 'Phm'      !important; 
+  color: black !important;
+  }
+}
+
+li[data-book='lemon'] { 
+  color: white; 
+}
+
+@media (min-width: 481px) { 
+  li[data-book='ges']:before { 
+  content: 'Judges' !important; 
+  color: black !important;
+  }
+}
+
+@media (max-width: 480px) { 
+  li[data-book='ges']:before { 
+  content: 'Jdg'      !important; 
+  color:   black      !important; 
+  }
+}
+
+li[data-book='ges'] { 
+  color: white; 
+}
+
+.search__result {
+  background-color: yellow;
+}
+
+.highlight-book:not([data-book='lemon']):not([data-book='ges']) {
+    background-color: #0099FF;
+    color: white;
+}
+
+li[data-book='lemon'].highlight-book:before,
+li[data-book='ges'].highlight-book:before {
+    background-color: #0099FF !important; 
+    color: white !important;
+}
+
+.highlight-chapter {
+    background-color: #0099FF;
+    color: white;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+}
+
+.container1 {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
